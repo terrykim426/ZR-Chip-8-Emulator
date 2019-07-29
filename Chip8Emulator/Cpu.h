@@ -28,7 +28,7 @@ public:
 	Cpu(Graphics* graphics);
 	~Cpu();
 
-	void Reset();
+	void Reset(const char* romPath);
 	void Run();
 	void OnKeyPressed(sf::Event::KeyEvent key);
 	void OnKeyReleased(sf::Event::KeyEvent key);

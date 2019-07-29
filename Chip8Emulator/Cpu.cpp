@@ -14,7 +14,7 @@ Cpu::~Cpu()
 {
 }
 
-void Cpu::Reset()
+void Cpu::Reset(const char* romPath)
 {
 	m_AddressI = 0;
 	m_ProgramCounter = 0x200;
@@ -23,7 +23,7 @@ void Cpu::Reset()
 
 	// load in the game
 	FILE *in;
-	fopen_s(&in, "E:/VS Projects/Chip8Emulator/Roms/INVADERS", "rb");
+	fopen_s(&in, romPath, "rb");
 	fread_s(&m_GameMemory[0x200], sizeof(m_GameMemory), 0xfff, 1, in);
 	fclose(in);
 

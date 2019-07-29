@@ -16,6 +16,7 @@ sf::RenderWindow* m_window = NULL;
 Graphics* m_graphics;
 Cpu* m_cpu;
 
+const char* romPath = "../Roms/INVADERS";
 
 
 int main()
@@ -25,7 +26,7 @@ int main()
 	m_graphics = new Graphics(m_window);
 	m_cpu = new Cpu(m_graphics);
 
-	m_cpu->Reset();
+	m_cpu->Reset(romPath);
 
 	while (m_window->isOpen())
 	{
